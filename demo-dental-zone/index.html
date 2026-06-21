@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Dental Care | Dental Zone</title>
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0ea5e9; /* Sky Blue */
+            --primary-hover: #0284c7;
+            --secondary: #10b981; /* Emerald/Mint */
+            --bg-dark: #0f172a; /* Slate 900 */
+            --bg-card: #1e293b; /* Slate 800 */
+            --bg-light: #f8fafc;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dark: #0f172a;
+            --border-color: #334155;
+            --radius-lg: 16px;
+            --radius-md: 8px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Premium Glow Effects */
+        .glow-sphere {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        
+        .glow-1 {
+            width: 300px;
+            height: 300px;
+            background-color: var(--primary);
+            top: 10%;
+            right: -10%;
+        }
+        
+        .glow-2 {
+            width: 400px;
+            height: 400px;
+            background-color: var(--secondary);
+            bottom: 20%;
+            left: -15%;
+        }
+
+        /* Navbar */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 100px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--secondary);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .rating-badge i {
+            color: #fbbf24;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 60%, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            max-width: 500px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Image/Illustration */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .hero-blob {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(16, 185, 129, 0.2));
+            filter: blur(50px);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: morphing 15s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        .visual-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(16px);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .visual-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(14, 165, 233, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .dentist-clinic-info {
+            text-align: left;
+            margin-top: 25px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .info-row i {
+            color: var(--primary);
+            width: 20px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: rgba(30, 41, 59, 0.3);
+            border-bottom: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border-color: rgba(14, 165, 233, 0.4);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Personal Pitch Section */
+        .personal-pitch {
+            padding: 100px 0;
+        }
+
+        .pitch-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .pitch-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .pitch-text h2 span {
+            color: var(--primary);
+        }
+
+        .pitch-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .pitch-quote {
+            border-left: 3px solid var(--secondary);
+            padding-left: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .pitch-visual {
+            background: rgba(14, 165, 233, 0.05);
+            border: 1px dashed rgba(14, 165, 233, 0.2);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .pitch-stat {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            font-family: 'Outfit', sans-serif;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .pitch-stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        /* Booking / Contact Widget */
+        .booking {
+            padding: 80px 0 120px;
+            position: relative;
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 50px;
+            align-items: stretch;
+        }
+
+        .booking-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .booking-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .booking-info p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .booking-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-grid class {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .form-control {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 12px 16px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .booking-card button {
+            width: 100%;
+            margin-top: 10px;
+            justify-content: center;
+            font-size: 1.05rem;
+        }
+
+        /* Review Widget */
+        .reviews-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, var(--bg-dark), rgba(30, 41, 59, 0.5));
+            border-top: 1px solid var(--border-color);
+        }
+
+        .reviews-summary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            background: rgba(30, 41, 59, 0.5);
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .summary-score {
+            text-align: center;
+        }
+
+        .score-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .score-stars {
+            color: #fbbf24;
+            margin: 5px 0;
+        }
+
+        .score-total {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .reviews-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .review-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            position: relative;
+        }
+
+        .review-rating {
+            color: #fbbf24;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+
+        .review-text {
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .reviewer-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .reviewer-status {
+            font-size: 0.75rem;
+            color: var(--secondary);
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 40px;
+            background: #090d16;
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer-contact-item:hover {
+            color: var(--primary);
+        }
+
+        .footer-contact-item i {
+            color: var(--primary);
+        }
+
+        .copyright {
+            margin-top: 40px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 30px;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
+            transform: scale(0.9);
+            transition: var(--transition);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-success-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin: 0 auto 20px;
+        }
+
+        .modal-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-content p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        /* Animations */
+        @keyframes morphing {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-grid, .booking-grid, .pitch-card {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-visual {
+                order: -1;
+            }
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            .features-grid, .reviews-row {
+                grid-template-columns: 1fr;
+            }
+            .pitch-text h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            .hero-actions {
+                flex-direction: column;
+            }
+            .hero-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Glow background spheres -->
+    <div class="glow-sphere glow-1"></div>
+    <div class="glow-sphere glow-2"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-tooth"></i>
+                <div class="logo-text">Dental Zone</div>
+            </a>
+            <a href="tel:+91 96062 16631" class="contact-btn">
+                <i class="fa-solid fa-phone"></i>
+                <span>Call Clinic</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="rating-badge">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4.9 Rated (180 Reviews on Google Maps)</span>
+                </div>
+                <h1 class="hero-title">A Modern Dental Experience.</h1>
+                <p class="hero-desc">Elevate your smile with premium care at Dental Zone. We offer state-of-the-art treatments in a warm, patient-first environment.</p>
+                <div class="hero-actions">
+                    <a href="#book" class="btn-primary">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>Book Appointment</span>
+                    </a>
+                    <a href="https://maps.google.com/?q=Dental+Zone+Indira+Nagar+Lucknow" target="_blank" class="btn-secondary">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Find Clinic</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-blob"></div>
+                <div class="visual-card">
+                    <div class="visual-icon">
+                        <i class="fa-solid fa-hospital-user"></i>
+                    </div>
+                    <h3>Smile Care Partner</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Your trusted neighborhood dental care clinic.</p>
+                    
+                    <div class="dentist-clinic-info">
+                        <div class="info-row">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Dental Zone Indira Nagar Lucknow</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 96062 16631</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>Mon - Sat: 10:00 AM - 8:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Premium Services</span>
+                <h2 class="section-title">Complete Oral Care</h2>
+                <p class="section-subtitle">We utilize cutting-edge medical technologies to make your treatments fast, comfortable, and highly effective.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-align-center"></i></div>
+                    <h3>Orthodontics</h3>
+                    <p>Get perfect tooth alignment with modern ceramic braces and invisible clear aligner treatments designed for all ages.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+                    <h3>Dental Implants</h3>
+                    <p>Restore lost teeth with titanium biocompatible dental implants that look, feel, and function just like natural teeth.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-sparkles"></i></div>
+                    <h3>Teeth Whitening</h3>
+                    <p>Brighten your smile with painless, clinically-proven laser whitening systems producing instant, long-lasting results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pitch / Special Value Message -->
+    <section class="personal-pitch">
+        <div class="container">
+            <div class="pitch-card">
+                <div class="pitch-text">
+                    <h2>Modernizing Dental Zone's Digital Presence</h2>
+                    <p>As a highly respected dental practitioner, your local reputation is unmatched. We designed this custom live demonstration to show how a professional, optimized landing page can directly benefit your practice.</p>
+                    
+                    <div class="pitch-quote">
+                        "Your practice has 180 positive reviews. Let's make it easy for new patients to discover you and book appointments without directory commission fees."
+                    </div>
+                    
+                    <p style="margin-top: 15px;">Well-regarded clinic in Indira Nagar (4.5+ stars). No website, managed via directories. Needs localized SEO, doctor profiles, and direct appointment bookings.</p>
+                </div>
+                
+                <div class="pitch-visual">
+                    <div class="pitch-stat">94%</div>
+                    <div class="pitch-stat-label">of patients</div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">research dental clinics online and check reviews before booking their first visit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Maps Reviews Widget -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Patient Testimonials</span>
+                <h2 class="section-title">Loved by the Community</h2>
+            </div>
+            
+            <div class="reviews-summary">
+                <div class="summary-score">
+                    <div class="score-number">4.9</div>
+                    <div class="score-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="score-total">Average Rating</div>
+                </div>
+                
+                <div style="color: var(--text-muted); font-size: 1.1rem; max-width: 500px;">
+                    Excellent track record on Google Maps. Read testimonials from patients who experienced our high-standard dental care.
+                </div>
+            </div>
+            
+            <div class="reviews-row">
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Very professional clinic. The staff is polite, and the treatment was absolutely painless. High standards of hygiene are maintained."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">RP</div>
+                        <div>
+                            <div class="reviewer-name">Rahul Prasad</div>
+                            <span class="reviewer-status">Local Guide</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Highly satisfied with my invisible aligners treatment. The doctor explained the procedure clearly. Highly recommended dental care clinic."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">AS</div>
+                        <div>
+                            <div class="reviewer-name">Anjali Sharma</div>
+                            <span class="reviewer-status">Verified Patient</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Clean facilities, advanced diagnostic tools, and friendly experts. They took care of my child's dental treatment with extreme care."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">MK</div>
+                        <div>
+                            <div class="reviewer-name">Manoj Kumar</div>
+                            <span class="reviewer-status">Verified Patient</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Widget -->
+    <section class="booking" id="book">
+        <div class="container booking-grid">
+            <div class="booking-info">
+                <span class="section-tag">Direct Scheduling</span>
+                <h2>Request a Call-Back</h2>
+                <p>Submit your details and preferred treatment time. Our front desk manager will contact you within 15 minutes to confirm your scheduling.</p>
+                
+                <div class="dentist-clinic-info" style="border: none; padding: 0;">
+                    <div class="info-row">
+                        <i class="fa-solid fa-shield-halved" style="color: var(--secondary)"></i>
+                        <span style="color: #fff; font-weight: 500;">Your patient details are secure and encrypted.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="booking-card">
+                <form id="appointmentForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="treatment">Select Treatment</label>
+                            <select id="treatment" class="form-control">
+                                <option value="Consultation">General Consultation</option>
+                                <option value="Aligners">Clear Aligners / Braces</option>
+                                <option value="Implants">Dental Implants</option>
+                                <option value="Whitening">Laser Teeth Whitening</option>
+                                <option value="Other">Other Treatment</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Additional Notes (Optional)</label>
+                        <textarea id="message" rows="3" class="form-control" placeholder="Describe any dental concerns..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Submit Request</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="#" class="logo footer-logo">
+                <i class="fa-solid fa-tooth"></i>
+                <div class="logo-text">Dental Zone</div>
+            </a>
+            <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 20px;">Dedicated multispeciality clinic providing state-of-the-art dental care treatments.</p>
+            
+            <div class="footer-contact">
+                <a href="tel:+91 96062 16631" class="footer-contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 96062 16631</span>
+                </a>
+                <a href="https://maps.google.com/?q=Dental+Zone+Indira+Nagar+Lucknow" target="_blank" class="footer-contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Dental Zone Indira Nagar Lucknow</span>
+                </a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2026 Dental Zone. Built by Sumy Business Solutions. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3>Request Submitted!</h3>
+            <p>Thank you for booking. A representative from Dental Zone will call you shortly to confirm your slot.</p>
+            <button onclick="closeModal()" class="btn-primary" style="margin: 0 auto; width: auto; padding: 10px 30px;">Close</button>
+        </div>
+    </div>
+
+    <!-- Booking Logic script -->
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success modal
+            document.getElementById('successModal').classList.add('active');
+            this.reset();
+        });
+
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('active');
+        }
+
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+    </script>
+</body>
+</html>
