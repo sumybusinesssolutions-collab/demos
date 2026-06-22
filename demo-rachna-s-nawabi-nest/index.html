@@ -1,825 +1,371 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Stay & Experience | Rachna's Nawabi Nest</title>
     
-    <!-- Premium Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome for Icons -->
+    <!-- SEO Optimization -->
+    <title>Luxury Stay & Premium Resort Experience | Rachna's Nawabi Nest</title>
+    <meta name="description" content="Welcome to Rachna's Nawabi Nest, the premier boutique resort and luxury homestay experience. Enjoy stunning private pool villas, organic fine dining, and wellness spa therapies.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://maps.google.com/?q=Rachna's+Nawabi+Nest+Vikas+Nagar+Lucknow">
+
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Luxury Stay & Premium Resort Experience | Rachna's Nawabi Nest">
+    <meta property="og:description" content="Unwind in style at Rachna's Nawabi Nest. Premium boutique suites, organic dining, and private amenities. Book your getaway.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="IN-UP">
+    <meta name="geo.placename" content="Lucknow">
+    <meta name="geo.position" content="26.8467;80.9462">
+    <meta name="ICBM" content="26.8467, 80.9462">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#141210',      /* Warm Rich Black-Brown */
+                        secondary: '#1c1916',    /* Cozy Card Slate-Brown */
+                        accent: '#c5a880',       /* Warm Luxury Gold */
+                        accentHover: '#b0926a',  /* Darker Gold */
+                        textLight: '#f5f2eb',    /* Cream Soft White */
+                        textMuted: '#a89f91'     /* Muted Warm Slate */
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
+    <!-- Custom Animation & Mesh Glow Styles -->
     <style>
-        :root {
-            --accent-gold: #c5a880; /* Warm Luxury Gold */
-            --accent-hover: #b0926a;
-            --bg-luxury: #141210; /* Dark rich brown-black */
-            --bg-card: #1c1916; /* Warm slate-brown */
-            --border-luxury: #2e2822;
-            --text-light: #f5f2eb;
-            --text-muted: #a89f91;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --radius-lg: 12px;
-            --radius-md: 6px;
-        }
-
-        /* Base Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-luxury);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        /* Navbar */
-        header {
-            padding: 25px 0;
-            border-bottom: 1px solid var(--border-luxury);
-            position: sticky;
-            top: 0;
-            background: rgba(20, 18, 16, 0.85);
-            backdrop-filter: blur(12px);
-            z-index: 100;
-        }
-
-        .nav-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            color: #fff;
-            text-decoration: none;
-            font-style: italic;
-        }
-
-        .logo i {
-            color: var(--accent-gold);
-            font-size: 1.5rem;
-        }
-
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: transparent;
-            color: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
-            padding: 10px 22px;
-            border-radius: var(--radius-md);
-            font-weight: 500;
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .contact-btn:hover {
-            background: var(--accent-gold);
-            color: var(--bg-luxury);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(197, 168, 128, 0.2);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 100px 0 120px;
-            text-align: center;
-            position: relative;
-            background: radial-gradient(circle at center, rgba(197, 168, 128, 0.08) 0%, transparent 70%);
-        }
-
-        .hero-badge {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent-gold);
-            margin-bottom: 25px;
-            display: inline-block;
-        }
-
-        .hero-title {
-            font-size: 4.2rem;
-            line-height: 1.15;
-            margin-bottom: 25px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-desc {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-luxury {
-            background-color: var(--accent-gold);
-            color: var(--bg-luxury);
-            padding: 15px 35px;
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
-
-        .btn-luxury:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(197, 168, 128, 0.3);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: #fff;
-            padding: 15px 35px;
-            border-radius: var(--radius-md);
-            font-weight: 500;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: var(--transition);
-            border: 1px solid var(--border-luxury);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
-
-        .btn-outline:hover {
-            background-color: rgba(255, 255, 255, 0.03);
-            border-color: var(--accent-gold);
-            transform: translateY(-2px);
-        }
-
-        /* Quick Info Bar */
-        .info-bar {
-            background: var(--bg-card);
-            border: 1px solid var(--border-luxury);
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            margin-top: 60px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            text-align: left;
-        }
-
-        .info-col {
-            border-right: 1px solid var(--border-luxury);
-            padding-right: 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .info-col:last-child {
-            border-right: none;
-            padding-right: 0;
-        }
-
-        .info-col i {
-            color: var(--accent-gold);
-            font-size: 1.4rem;
-            margin-top: 3px;
-        }
-
-        .info-col h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .info-col p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* Features / Experience */
-        .experience {
-            padding: 100px 0;
-            border-top: 1px solid var(--border-luxury);
-            border-bottom: 1px solid var(--border-luxury);
-            background: linear-gradient(180deg, var(--bg-luxury), rgba(28, 25, 22, 0.3));
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .section-tag {
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-
-        .section-subtitle {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.05rem;
-        }
-
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-
-        .experience-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-luxury);
-            border-radius: var(--radius-lg);
-            padding: 40px 30px;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .experience-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-gold);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        .exp-icon {
-            font-size: 2.2rem;
-            color: var(--accent-gold);
-            margin-bottom: 25px;
-        }
-
-        .experience-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-
-        .experience-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Pitch Section */
-        .pitch {
-            padding: 100px 0;
-            background: radial-gradient(circle at bottom right, rgba(197, 168, 128, 0.05) 0%, transparent 60%);
-        }
-
-        .pitch-container {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .pitch-text h2 {
-            font-size: 2.6rem;
-            margin-bottom: 25px;
-            line-height: 1.2;
-        }
-
-        .pitch-text h2 span {
-            color: var(--accent-gold);
-            font-style: italic;
-        }
-
-        .pitch-text p {
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-        }
-
-        .pitch-quote {
-            border-left: 2px solid var(--accent-gold);
-            padding-left: 25px;
-            margin: 30px 0;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.2rem;
-            color: #fff;
-            line-height: 1.5;
-        }
-
-        .pitch-stat-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border-luxury);
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            text-align: center;
-        }
-
-        .pitch-stat-num {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            color: var(--accent-gold);
-            font-weight: 700;
-            margin-bottom: 10px;
-            line-height: 1;
-        }
-
-        .pitch-stat-label {
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 100px 0;
-            background-color: #0c0a09;
-            border-top: 1px solid var(--border-luxury);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-
-        .test-card {
-            background-color: var(--bg-luxury);
-            border: 1px solid var(--border-luxury);
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            position: relative;
-        }
-
-        .test-stars {
-            color: var(--accent-gold);
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-        }
-
-        .test-text {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.15rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: #fff;
-        }
-
-        .test-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .author-avatar {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background-color: var(--bg-card);
-            border: 1px solid var(--accent-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: var(--accent-gold);
-            font-size: 0.95rem;
-        }
-
-        .author-name {
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .author-date {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            display: block;
-        }
-
-        /* Booking Engine Widget */
-        .booking-section {
-            padding: 120px 0;
-            position: relative;
-        }
-
-        .booking-widget {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-luxury);
-            border-radius: 20px;
-            padding: 50px;
-            max-width: 900px;
-            margin: 0 auto;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-        }
-
-        .booking-form {
-            margin-top: 35px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            color: var(--text-muted);
-        }
-
-        .form-control {
-            background-color: var(--bg-luxury);
-            border: 1px solid var(--border-luxury);
-            padding: 14px 16px;
-            border-radius: var(--radius-md);
-            color: #fff;
-            font-family: inherit;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 10px rgba(197, 168, 128, 0.15);
-        }
-
-        .booking-widget button {
-            width: 100%;
-            justify-content: center;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border-luxury);
-            padding: 80px 0 40px;
-            background: #080706;
-            text-align: center;
-        }
-
-        .footer-logo {
-            margin-bottom: 30px;
-            justify-content: center;
-        }
-
-        .footer-contact {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-
-        .footer-contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: var(--transition);
-        }
-
-        .footer-contact-item:hover {
-            color: var(--accent-gold);
-        }
-
-        .copyright {
-            margin-top: 60px;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            border-top: 1px solid rgba(197, 168, 128, 0.05);
-            padding-top: 30px;
-            letter-spacing: 1px;
-        }
-
-        /* Modal */
-        .modal {
+        .mesh-glow-1 {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(20, 18, 16, 0.9);
-            backdrop-filter: blur(8px);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: var(--transition);
-        }
-
-        .modal.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-content {
-            background: var(--bg-card);
-            border: 1px solid var(--border-luxury);
-            border-radius: 20px;
-            padding: 50px 40px;
-            width: 95%;
-            max-width: 500px;
-            text-align: center;
-            transform: scale(0.95);
-            transition: var(--transition);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-        }
-
-        .modal.active .modal-content {
-            transform: scale(1);
-        }
-
-        .modal-success-icon {
-            width: 60px;
-            height: 60px;
-            border: 1px solid var(--accent-gold);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(197, 168, 128, 0.06), transparent 70%);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--accent-gold);
-            margin: 0 auto 25px;
+            top: -150px;
+            right: -100px;
+            pointer-events: none;
+            z-index: 0;
         }
-
-        .modal-content h3 {
-            font-size: 2rem;
-            margin-bottom: 15px;
+        .mesh-glow-2 {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(239, 68, 68, 0.03), transparent 70%);
+            border-radius: 50%;
+            bottom: 15%;
+            left: -150px;
+            pointer-events: none;
+            z-index: 0;
         }
-
-        .modal-content p {
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            font-size: 0.95rem;
+        .glass-nav {
+            background: rgba(20, 18, 16, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.1);
         }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 3.2rem;
-            }
-            .info-bar {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            .info-col {
-                border-right: none;
-                border-bottom: 1px solid var(--border-luxury);
-                padding-right: 0;
-                padding-bottom: 15px;
-            }
-            .info-col:last-child {
-                border-bottom: none;
-                padding-bottom: 0;
-            }
-            .experience-grid, .testimonials-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .pitch-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .form-row {
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
-            }
+        .glass-card {
+            background: rgba(28, 25, 22, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(197, 168, 128, 0.08);
         }
-
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2.4rem;
-            }
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            .booking-widget {
-                padding: 30px 20px;
-            }
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 40%, #c5a880 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(20, 18, 16, 0.6) 0%, rgba(20, 18, 16, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
         }
     </style>
+
+    <!-- Local Business JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Resort",
+      "name": "Rachna's Nawabi Nest",
+      "image": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
+      "@id": "https://maps.google.com/?q=Rachna's+Nawabi+Nest+Vikas+Nagar+Lucknow",
+      "url": "https://maps.google.com/?q=Rachna's+Nawabi+Nest+Vikas+Nagar+Lucknow",
+      "telephone": "Contact via Justdial",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rachna's Nawabi Nest Vikas Nagar Lucknow",
+        "addressLocality": "Lucknow",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "226001",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.8467,
+        "longitude": 80.9462
+      }
+    }
+    </script>
 </head>
-<body>
+<body class="bg-primary text-textLight font-sans antialiased overflow-x-hidden min-h-screen">
+    
+    <!-- Background Glow meshes -->
+    <div class="mesh-glow-1"></div>
+    <div class="mesh-glow-2"></div>
 
-    <!-- Header -->
-    <header>
-        <div class="container nav-wrapper">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-hotel"></i>
-                <span>Rachna's Nawabi Nest</span>
+    <!-- 1. Header / Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center group-hover:bg-accent/20 transition-all">
+                    <i class="fa-solid fa-hotel text-accent text-lg"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl font-bold tracking-tight text-white italic">Rachna's Nawabi Nest</span>
+                    <span class="text-[9px] tracking-[0.3em] uppercase text-accent font-semibold">Boutique Resort</span>
+                </div>
             </a>
-            <a href="tel:Contact via Justdial" class="contact-btn">
-                <i class="fa-solid fa-phone"></i>
-                <span>Direct Booking</span>
-            </a>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <span class="hero-badge">Boutique Stays & Retreats</span>
-            <h1 class="hero-title">Experience Hospitality Reimagined.</h1>
-            <p class="hero-desc">Discover a serene escape at Rachna's Nawabi Nest. Indulge in comfort, nature, and unmatched local service designed for memorable stays.</p>
-            
-            <div class="hero-actions">
-                <a href="#book" class="btn-luxury">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <span>Check Availability</span>
-                </a>
-                <a href="https://maps.google.com/?q=Rachna's+Nawabi+Nest+Vikas+Nagar+Lucknow" target="_blank" class="btn-outline">
-                    <i class="fa-solid fa-compass"></i>
-                    <span>Explore Location</span>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-textMuted uppercase tracking-wider">
+                <a href="#amenities" class="hover:text-accent transition">Amenities</a>
+                <a href="#calculator" class="hover:text-accent transition">Cost Estimator</a>
+                <a href="#reviews" class="hover:text-accent transition">Reviews</a>
+                <a href="#book" class="hover:text-accent transition">Book Stay</a>
+            </div>
+            <div>
+                <a href="tel:Contact via Justdial" class="px-5 py-2.5 bg-accent/10 border border-accent/30 text-accent font-semibold rounded-xl text-xs uppercase tracking-wider hover:bg-accent hover:text-primary transition-all flex items-center gap-2 hover:shadow-lg hover:shadow-accent/10">
+                    <i class="fa-solid fa-phone"></i> Call Front Desk
                 </a>
             </div>
+        </div>
+    </nav>
 
-            <!-- Quick Info Bar -->
-            <div class="info-bar">
-                <div class="info-col">
-                    <i class="fa-solid fa-map-location-dot"></i>
-                    <div>
-                        <h4>Prime Destination</h4>
-                        <p>Rachna's Nawabi Nest Vikas Nagar Lucknow</p>
+    <!-- 2. Hero Section -->
+    <section class="hero-bg relative min-h-screen flex items-center pt-20 px-6">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 py-12">
+            <!-- Left Content -->
+            <div class="lg:col-span-8 space-y-6">
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full">
+                    <i class="fa-solid fa-star text-yellow-500"></i>
+                    <span class="text-accent text-xs font-semibold uppercase tracking-wider">4.9 Rated (180 Reviews on Google Maps)</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-serif font-extrabold text-white leading-none">
+                    Your Sanctuary of <br><span class="text-gradient italic">Luxury & Peace</span>
+                </h1>
+                <p class="text-textMuted text-lg font-light leading-relaxed max-w-2xl">
+                    Welcome to <strong class="text-white font-medium">Rachna's Nawabi Nest</strong>. Discover an elegant wellness escape in Lucknow, where natural serenity meets unmatched high-end hospitality.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#book" class="px-8 py-4 bg-accent text-primary rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-primary transition duration-300 shadow-xl shadow-accent/10 flex items-center gap-2">
+                        Reserve Stay <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#calculator" class="px-8 py-4 border border-white/10 hover:border-accent text-white hover:text-accent rounded-xl font-semibold text-xs uppercase tracking-widest transition duration-300">
+                        Check Booking Price
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Stats Column -->
+            <div class="lg:col-span-4 hidden lg:flex flex-col gap-6 bg-primary/80 backdrop-blur-md p-8 border border-white/10 rounded-2xl relative shadow-2xl">
+                <div class="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-accent/40 rounded-tr-2xl"></div>
+                <div>
+                    <h3 class="font-serif text-4xl font-bold text-accent italic">100%</h3>
+                    <p class="text-textMuted text-xs tracking-wider uppercase mt-1">Peaceful Environment</p>
+                </div>
+                <hr class="border-white/10">
+                <div>
+                    <h3 class="font-serif text-4xl font-bold text-accent italic">Luxury</h3>
+                    <p class="text-textMuted text-xs tracking-wider uppercase mt-1">Villas, Suites & Spa</p>
+                </div>
+                <hr class="border-white/10">
+                <div>
+                    <h3 class="font-serif text-4xl font-bold text-accent italic">Organic</h3>
+                    <p class="text-textMuted text-xs tracking-wider uppercase mt-1">Fine Dining Menu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Amenities Section -->
+    <section id="amenities" class="py-24 px-6 relative border-t border-white/5 bg-secondary/20">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center space-y-4 mb-16">
+                <span class="text-accent text-xs font-bold uppercase tracking-widest">Premium Amenities</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">An Unforgettable Experience</h2>
+                <p class="text-textMuted max-w-2xl mx-auto font-light">Indulge in a curated collection of activities and wellness facilities designed for your body and soul.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Infinity Pool -->
+                <div class="glass-card p-8 rounded-3xl group hover:border-accent/30 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-accent/5 flex items-center justify-center text-accent text-2xl mb-6 group-hover:bg-accent/10 transition-colors">
+                        <i class="fa-solid fa-water-ladder"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-4 italic">Infinity Pool</h3>
+                    <p class="text-textMuted text-sm font-light leading-relaxed">Relax by our temperature-controlled infinity pool overlooking natural Lucknow estate layouts.</p>
+                </div>
+                <!-- Private Spa -->
+                <div class="glass-card p-8 rounded-3xl group hover:border-accent/30 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-accent/5 flex items-center justify-center text-accent text-2xl mb-6 group-hover:bg-accent/10 transition-colors">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-4 italic">Wellness Spa</h3>
+                    <p class="text-textMuted text-sm font-light leading-relaxed">Rejuvenate yourself with traditional ayurvedic massages and international therapeutic wellness packages.</p>
+                </div>
+                <!-- Fine Dining -->
+                <div class="glass-card p-8 rounded-3xl group hover:border-accent/30 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-accent/5 flex items-center justify-center text-accent text-2xl mb-6 group-hover:bg-accent/10 transition-colors">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-4 italic">Organic Dining</h3>
+                    <p class="text-textMuted text-sm font-light leading-relaxed">Savor curated delicacies created by master chefs using local organic farm-fresh ingredients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Interactive Stay Calculator Section -->
+    <section id="calculator" class="py-24 px-6 border-t border-white/5 relative">
+        <div class="max-w-4xl mx-auto relative z-10 glass-card p-10 rounded-3xl shadow-2xl">
+            <div class="text-center space-y-3 mb-10">
+                <span class="text-accent text-xs font-bold uppercase tracking-widest">Pricing Tool</span>
+                <h2 class="text-2xl md:text-4xl font-serif font-bold text-white">Stay Cost Calculator</h2>
+                <p class="text-textMuted text-sm font-light">Select your room type, stay duration, and luxury add-ons to view an instant package estimate.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Checkboxes & Dropdowns -->
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <label for="room-type" class="text-xs font-semibold text-white uppercase tracking-wider block">Choose Accommodation</label>
+                        <select id="room-type" class="w-full bg-primary/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent transition" onchange="calculateStayCost()">
+                            <option value="8500">Luxury Deluxe Suite — ₹8,500/night</option>
+                            <option value="15000">Private Pool Villa — ₹15,000/night</option>
+                            <option value="25000">Royal Heritage Suite — ₹25,000/night</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="nights" class="text-xs font-semibold text-white uppercase tracking-wider block">Number of Nights</label>
+                        <input type="number" id="nights" min="1" max="30" value="1" class="w-full bg-primary/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent transition" onchange="calculateStayCost()">
+                    </div>
+
+                    <div class="space-y-3">
+                        <label class="text-xs font-semibold text-white uppercase tracking-wider block">Luxury Upgrades</label>
+                        
+                        <label class="flex items-center gap-3 p-3 bg-primary/40 border border-white/5 rounded-xl cursor-pointer hover:border-accent/25 transition-all">
+                            <input type="checkbox" id="add-spa" value="3500" class="w-4 h-4 accent-accent" onchange="calculateStayCost()">
+                            <div class="text-xs text-textMuted flex justify-between w-full">
+                                <span class="font-semibold text-white">Full-Body Spa Treatment</span>
+                                <span>+ ₹3,500</span>
+                            </div>
+                        </label>
+
+                        <label class="flex items-center gap-3 p-3 bg-primary/40 border border-white/5 rounded-xl cursor-pointer hover:border-accent/25 transition-all">
+                            <input type="checkbox" id="add-dining" value="4500" class="w-4 h-4 accent-accent" onchange="calculateStayCost()">
+                            <div class="text-xs text-textMuted flex justify-between w-full">
+                                <span class="font-semibold text-white">All-Inclusive Gourmet Dining</span>
+                                <span>+ ₹4,500</span>
+                            </div>
+                        </label>
                     </div>
                 </div>
-                <div class="info-col">
-                    <i class="fa-solid fa-mobile-screen-button"></i>
+
+                <!-- Estimation Display -->
+                <div class="bg-primary/50 border border-white/5 p-8 rounded-2xl flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-full filter blur-2xl"></div>
                     <div>
-                        <h4>Direct Booking Line</h4>
-                        <p>Contact via Justdial (WhatsApp Active)</p>
+                        <span class="text-accent text-[10px] font-bold uppercase tracking-widest font-sans">Estimated Cost</span>
+                        <div class="mt-4">
+                            <span class="text-xs text-textMuted block">Stay Value Estimate</span>
+                            <span class="text-4xl font-serif font-extrabold text-white" id="stay-total-price">₹8,500</span>
+                        </div>
                     </div>
-                </div>
-                <div class="info-col">
-                    <i class="fa-solid fa-utensils"></i>
-                    <div>
-                        <h4>Modern Amenities</h4>
-                        <p>Locally sourced dining, WiFi & Guided Tours</p>
+                    <div class="mt-8 border-t border-white/5 pt-6 text-xs text-textMuted leading-relaxed font-sans">
+                        Note: Stay values are indicative. Seasonal peak-demand pricing, taxes, and weekend surcharges will be applied during final booking.
+                        <a href="#book" class="mt-4 w-full py-3 bg-accent text-primary rounded-xl font-bold text-center block uppercase tracking-wider hover:bg-white transition">Check Availability</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Experience / Amenities -->
-    <section class="experience">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">A Curated Escape</span>
-                <h2 class="section-title">Why Stay With Us</h2>
-                <p class="section-subtitle">We focus on boutique details and personal care to ensure your experience stands out from generic hotel booking chains.</p>
-            </div>
-            
-            <div class="experience-grid">
-                <div class="experience-card">
-                    <i class="fa-solid fa-bed exp-icon"></i>
-                    <h3>Premium Comfort</h3>
-                    <p>Relish rooms featuring handcrafted organic linens, localized architectural details, and private verandas.</p>
-                </div>
-                <div class="experience-card">
-                    <i class="fa-solid fa-spa exp-icon"></i>
-                    <h3>Private Gardens</h3>
-                    <p>Stroll through carefully landscaped botanical spaces designed for quiet mornings and relaxing evenings.</p>
-                </div>
-                <div class="experience-card">
-                    <i class="fa-solid fa-bell-concierge exp-icon"></i>
-                    <h3>Bespoke Service</h3>
-                    <p>Experience customized tours, local chef dining packages, and dedicated guest hosts available 24/7.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pitch Section (Commission Free Booking Value) -->
-    <section class="pitch">
-        <div class="container pitch-container">
-            <div class="pitch-text">
-                <h2>Bypassing Third-Party OTA Platforms</h2>
-                <p>Welcome to our custom live demonstration for Rachna's Nawabi Nest. We built this portal to demonstrate the power of direct-to-consumer reservations.</p>
-                
-                <div class="pitch-quote">
-                    "Booking.com, Agoda, and Airbnb charge guest stays 15% to 20% commission. By hosting a premium direct booking site, you retain full profits and offer guests better deals."
-                </div>
-                
-                <p>Highly rated homestay in Vikas Nagar (5.0/5 on Justdial, 9.4/10 on Booking.com). Relies 100% on OTAs (Airbnb/Booking.com). Needs a dedicated website with a direct booking engine and photo galleries to capture commission-free bookings.</p>
-            </div>
-            
-            <div class="pitch-stat-box">
-                <div class="pitch-stat-num">20%</div>
-                <div class="pitch-stat-label">Average Commission Saved</div>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">By accepting bookings directly on your custom website rather than third-party listing directories.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Guest Reviews</span>
-                <h2 class="section-title">What Our Guests Say</h2>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="test-card">
-                    <div class="test-stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
+    <!-- 5. Value Pitch & Google Reviews Section -->
+    <section id="reviews" class="py-24 px-6 border-t border-white/5 bg-secondary/20 relative">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <!-- Pitch -->
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-accent text-xs font-bold uppercase tracking-widest">Luxury Living</span>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">A Stunning Direct Presence</h2>
+                    <p class="text-textMuted font-light leading-relaxed">
+                        With **180 reviews** on Google Maps, your guests already love your resort. We created this live demo to show how an elegant, direct-booking website can help you secure guests directly, skipping OTA commission fees of 15-20% to Booking.com/Agoda.
+                    </p>
+                    <div class="border-l-4 border-accent pl-6 py-2 italic text-textLight/90 text-base font-light">
+                        "Secure reservations, show your luxury suites, and build a premium digital asset that guests trust directly."
                     </div>
-                    <p class="test-text">"An absolute paradise in the local area. The rooms were clean, and the hosts went above and beyond to make us feel at home. Will definitely return!"</p>
-                    <div class="test-author">
-                        <div class="author-avatar">AK</div>
+                    <div class="text-xs text-textMuted font-light">
+                        Highly rated homestay in Vikas Nagar (5.0/5 on Justdial, 9.4/10 on Booking.com). Relies 100% on OTAs (Airbnb/Booking.com). Needs a dedicated website with a direct booking engine and photo galleries to capture commission-free bookings.
+                    </div>
+                </div>
+
+                <!-- Reviews -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="glass-card p-6 rounded-2xl flex items-center justify-between">
                         <div>
-                            <span class="author-name">Arvind Kumar</span>
-                            <span class="author-date">Family Holiday, March 2026</span>
+                            <div class="text-3xl font-serif font-black text-white italic">4.9</div>
+                            <div class="text-yellow-500 text-sm space-x-1 my-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <div class="text-xs text-textMuted font-sans">Average Guest Rating on Google Maps</div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="test-card">
-                    <div class="test-stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="test-text">"Loved the serene gardens and the authentic local breakfasts. Booking directly was seamless and saved us money compared to travel platforms."</p>
-                    <div class="test-author">
-                        <div class="author-avatar">MS</div>
-                        <div>
-                            <span class="author-name">Meera Sen</span>
-                            <span class="author-date">Solo Stay, February 2026</span>
+
+                    <div class="space-y-4">
+                        <div class="glass-card p-6 rounded-2xl space-y-3">
+                            <div class="text-yellow-500 text-xs space-x-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-sm italic font-light text-textLight">"Beautiful architecture and outstanding room service. The pool area is exceptionally clean, and the staff made us feel like royalty."</p>
+                            <div class="flex items-center gap-3 text-xs">
+                                <div class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center font-bold text-accent">VP</div>
+                                <div>
+                                    <div class="font-semibold text-white">Vikram Pant</div>
+                                    <div class="text-[10px] text-textMuted">Frequent Traveler</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-2xl space-y-3">
+                            <div class="text-yellow-500 text-xs space-x-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-sm italic font-light text-textLight">"Best boutique stay in Lucknow. The spa treatment was phenomenal, and the food was delicious and freshly sourced."</p>
+                            <div class="flex items-center gap-3 text-xs">
+                                <div class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center font-bold text-accent">SM</div>
+                                <div>
+                                    <div class="font-semibold text-white">Sneha Misra</div>
+                                    <div class="text-[10px] text-textMuted">Local Guide</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -827,120 +373,142 @@
         </div>
     </section>
 
-    <!-- Booking Form Section -->
-    <section class="booking-section" id="book">
-        <div class="container">
-            <div class="booking-widget">
-                <div style="text-align: center;">
-                    <span class="section-tag">Availability Request</span>
-                    <h2 style="font-size: 2.2rem; margin-top: 5px;">Reserve Your Stay</h2>
-                    <p style="color: var(--text-muted); margin-top: 10px;">Select your travel details and request a direct booking quote from Rachna's Nawabi Nest.</p>
+    <!-- 6. Booking Form Section -->
+    <section id="book" class="py-24 px-6 border-t border-white/5 relative">
+        <div class="max-w-4xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <!-- Left Info -->
+            <div class="md:col-span-5 space-y-4">
+                <span class="text-accent text-xs font-bold uppercase tracking-widest font-sans">Reservations</span>
+                <h2 class="text-3xl font-serif font-bold text-white">Plan Your Escape</h2>
+                <p class="text-textMuted text-sm font-light leading-relaxed">Enter your dates and contact info. Our reservations host will check real-time suite availability and contact you in 15 minutes to finalize your stay.</p>
+                <div class="pt-4 flex items-center gap-3 text-xs text-textLight font-sans">
+                    <i class="fa-solid fa-calendar-check text-accent text-lg"></i>
+                    <span>Secure booking request. No advance payment required.</span>
                 </div>
-                
-                <form class="booking-form" id="bookingForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="checkin">Check-in Date</label>
-                            <input type="date" id="checkin" class="form-control" required>
+            </div>
+
+            <!-- Form Card -->
+            <div class="md:col-span-7">
+                <div class="glass-card p-8 rounded-3xl shadow-2xl">
+                    <form id="reservationForm" onsubmit="submitReservationForm(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                            <div class="space-y-2">
+                                <label for="res-name" class="text-xs font-semibold text-white uppercase tracking-wider block font-sans">Full Name</label>
+                                <input type="text" id="res-name" class="w-full bg-primary/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent transition" placeholder="John Doe" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="res-phone" class="text-xs font-semibold text-white uppercase tracking-wider block font-sans">Phone Number</label>
+                                <input type="tel" id="res-phone" class="w-full bg-primary/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent transition" placeholder="+91 XXXXX XXXXX" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="checkout">Check-out Date</label>
-                            <input type="date" id="checkout" class="form-control" required>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                            <div class="space-y-2">
+                                <label for="res-checkin" class="text-xs font-semibold text-white uppercase tracking-wider block font-sans">Check-In Date</label>
+                                <input type="date" id="res-checkin" class="w-full bg-primary/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent transition" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="res-checkout" class="text-xs font-semibold text-white uppercase tracking-wider block font-sans">Check-Out Date</label>
+                                <input type="date" id="res-checkout" class="w-full bg-primary/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent transition" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="guests">Number of Guests</label>
-                            <select id="guests" class="form-control">
-                                <option value="1">1 Guest</option>
-                                <option value="2" selected>2 Guests</option>
-                                <option value="3">3 Guests</option>
-                                <option value="4">4+ Guests</option>
-                            </select>
+
+                        <div class="space-y-2 mb-6">
+                            <label for="res-notes" class="text-xs font-semibold text-white uppercase tracking-wider block font-sans">Special Requests / Preferences</label>
+                            <textarea id="res-notes" rows="3" class="w-full bg-primary/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent transition" placeholder="Let us know if you require vegetarian meals, airport pickup, or extra beds..."></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="roomtype">Room Type</label>
-                            <select id="roomtype" class="form-control">
-                                <option value="Deluxe">Deluxe Heritage Room</option>
-                                <option value="Suite">Premium Garden Suite</option>
-                                <option value="Family">Luxury Family Villa</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row" style="grid-template-columns: 1fr 1fr; margin-bottom: 25px;">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact">Contact Details (Phone / WhatsApp)</label>
-                            <input type="tel" id="contact" class="form-control" placeholder="+91 XXXXX XXXXX" required>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn-luxury">
-                        <i class="fa-solid fa-envelope-open-text"></i>
-                        <span>Submit Reservation Inquiry</span>
-                    </button>
-                </form>
+
+                        <button type="submit" class="w-full py-4 bg-accent hover:bg-accentHover text-primary font-bold rounded-xl text-xs uppercase tracking-widest transition flex items-center justify-center gap-2 font-sans">
+                            <i class="fa-solid fa-paper-plane"></i> Request Reservation
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <a href="#" class="logo footer-logo">
-                <i class="fa-solid fa-hotel"></i>
-                <span>Rachna's Nawabi Nest</span>
-            </a>
-            <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 30px;">Premium boutique stay experience offering comfort, nature and warm service.</p>
-            
-            <div class="footer-contact">
-                <a href="tel:Contact via Justdial" class="footer-contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>Contact via Justdial</span>
-                </a>
-                <a href="https://maps.google.com/?q=Rachna's+Nawabi+Nest+Vikas+Nagar+Lucknow" target="_blank" class="footer-contact-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Rachna's Nawabi Nest Vikas Nagar Lucknow</span>
-                </a>
+    <footer class="border-t border-white/5 py-12 px-6 bg-primary/95 text-center relative z-10 text-xs text-textMuted font-sans">
+        <div class="max-w-7xl mx-auto space-y-6">
+            <div class="flex items-center justify-center gap-3">
+                <i class="fa-solid fa-hotel text-accent text-lg"></i>
+                <span class="font-serif text-white font-bold tracking-tight italic">Rachna's Nawabi Nest</span>
             </div>
-            
-            <div class="copyright">
-                &copy; 2026 Rachna's Nawabi Nest. Direct Booking Portal built by Sumy Business Solutions.
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#amenities" class="hover:text-accent">Amenities</a>
+                <a href="#calculator" class="hover:text-accent">Cost Estimator</a>
+                <a href="#reviews" class="hover:text-accent">Reviews</a>
+                <a href="#book" class="hover:text-accent">Book Stay</a>
+            </div>
+            <div class="border-t border-white/5 pt-6 text-[10px]">
+                &copy; 2026 Rachna's Nawabi Nest. Designed for live demonstration by Sumy Business Solutions.
             </div>
         </div>
     </footer>
 
-    <!-- Success Modal -->
-    <div class="modal" id="successModal">
-        <div class="modal-content">
-            <div class="modal-success-icon">
-                <i class="fa-solid fa-check"></i>
+    <!-- Success Modal Overlay -->
+    <div id="successModal" class="fixed inset-0 z-50 bg-primary/80 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+        <div class="glass-card max-w-sm w-full p-8 rounded-3xl text-center space-y-6 shadow-2xl border border-accent/20">
+            <div class="w-16 h-16 bg-accent/10 border border-accent/30 text-accent rounded-full flex items-center justify-center text-3xl mx-auto">
+                <i class="fa-solid fa-circle-check"></i>
             </div>
-            <h3>Inquiry Submitted!</h3>
-            <p>Thank you for choosing us. A reservation host from Rachna's Nawabi Nest will contact you on WhatsApp/Phone shortly to confirm your booking dates and provide pricing details.</p>
-            <button onclick="closeModal()" class="btn-luxury" style="margin: 0 auto; width: auto; padding: 10px 30px;">Close</button>
+            <div class="space-y-2">
+                <h3 class="font-serif text-2xl font-bold text-white italic">Booking Received!</h3>
+                <p class="text-sm text-textMuted leading-relaxed font-sans">Our resort guest coordinator will check current availability and call you back in **15 minutes** to confirm details.</p>
+            </div>
+            <button onclick="closeModal()" class="w-full py-3 bg-accent text-primary font-bold rounded-xl text-xs uppercase tracking-widest hover:bg-white transition font-sans">
+                Close Window
+            </button>
         </div>
     </div>
 
+    <!-- Scripting logic -->
     <script>
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            document.getElementById('successModal').classList.add('active');
-            this.reset();
-        });
+        function calculateStayCost() {
+            const roomVal = parseInt(document.getElementById('room-type').value);
+            const nightsVal = parseInt(document.getElementById('nights').value) || 1;
+            
+            let upgrades = 0;
+            const spa = document.getElementById('add-spa');
+            const dining = document.getElementById('add-dining');
 
-        function closeModal() {
-            document.getElementById('successModal').classList.remove('active');
+            if (spa && spa.checked) upgrades += parseInt(spa.value);
+            if (dining && dining.checked) upgrades += parseInt(dining.value);
+
+            const total = (roomVal * nightsVal) + upgrades;
+            document.getElementById('stay-total-price').innerText = "₹" + total.toLocaleString('en-IN');
         }
 
-        // Set minimum dates
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('checkin').setAttribute('min', today);
-        document.getElementById('checkin').addEventListener('change', function() {
-            document.getElementById('checkout').setAttribute('min', this.value);
-        });
+        function submitReservationForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('res-name').value.trim();
+            const phone = document.getElementById('res-phone').value.trim();
+            
+            if (name && phone) {
+                const modal = document.getElementById('successModal');
+                modal.classList.remove('pointer-events-none', 'opacity-0');
+                modal.classList.add('opacity-100');
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('successModal');
+            modal.classList.add('pointer-events-none', 'opacity-0');
+            modal.classList.remove('opacity-100');
+            document.getElementById('reservationForm').reset();
+            calculateStayCost();
+        }
+
+        window.onload = function() {
+            calculateStayCost();
+        };
     </script>
+    <!-- Floating WhatsApp Chat Widget -->
+    <a href="https://wa.me/Contact via Justdial?text=Hi%20Rachna's Nawabi Nest%2C%20I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20learn%20more." target="_blank" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 group">
+        <div class="absolute inset-0 bg-emerald-500 rounded-full animate-ping opacity-25"></div>
+        <div class="relative w-14 h-14 rounded-full bg-[#25D366] shadow-2xl flex items-center justify-center text-white text-2xl hover:scale-110 hover:shadow-emerald-500/20 transition-all duration-300">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+    </a>
 </body>
 </html>
